@@ -1,0 +1,13 @@
+<ul>
+  <% @restaurante.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+</ul>
+
+<%= form_for @restaurante do |f|%>
+    Nome: <%= f.text_field :nome %>
+    Endereço <%= f.text_field :endereco%>
+    Especialidade: <%= f.text_field :especialidade%>
+    <%= f.submit %>
+
+<% end %>

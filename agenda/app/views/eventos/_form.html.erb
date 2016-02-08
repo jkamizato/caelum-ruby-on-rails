@@ -1,0 +1,43 @@
+<%= form_for(@evento) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :nome, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :nome, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :local , class: 'col-sm-2 control-label'%><br>
+    <div class="col-sm-10">
+    <%= f.text_field :local, class: 'form-control' %>
+      </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :inicio, class: 'col-sm-2 control-label'%>
+    <div class="col-sm-10">
+    <%= f.datetime_select :inicio, start_year: Time.now.year %>
+      </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :termino, class: 'col-sm-2 control-label'%>
+    <div class="col-sm-10">
+    <%= f.datetime_select :termino%>
+      </div>
+  </div>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit %>
+    </div>
+  </div>
+<% end %>
