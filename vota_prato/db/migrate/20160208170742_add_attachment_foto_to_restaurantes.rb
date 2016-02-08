@@ -5,7 +5,7 @@ class AddAttachmentFotoToRestaurantes < ActiveRecord::Migration
     end
   end
 
-  #def self.down
-  #  remove_attachment :restaurantes, :foto
-  #end
+  def self.down
+    remove_attachment :restaurantes, :foto
+  end
 end
