@@ -8,11 +8,10 @@
   <%= stylesheet_link_tag 'scaffolds' %>
 </head>
 <body>
-<%= render "layouts/menu_principal",
-           locals: {opcoes: %w(restaurantes clientes qualificacaos)}%>
+<%= menu_principal %w(restaurantes clientes qualificacaos)%>
 
 
 <%= yield %>
 
 </body>
-</html>z
+</html>
